@@ -48,7 +48,7 @@ void LinkedList::append(int obj){ //adds element to the end of a list
     Node* tmp = head;
     while (tmp->next != nullptr){ //finds the end of the list
         tmp = tmp->next;}
-    tmp->next = new Node(obj, tmp); //establishes new Node at the end of the list
+    tmp->next = new Node(obj); //establishes new Node at the end of the list
 }
 
 bool LinkedList::Delete(int obj){ //finds and deletes object in a linked list
