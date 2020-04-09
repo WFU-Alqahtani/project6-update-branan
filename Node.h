@@ -4,7 +4,7 @@
 class Node {
 public:
     // Node constructor
-    Node(YourClass v , Node* n = nullptr)
+    Node(int v = 0, Node* n = nullptr)
     {
         value = v;
         next = n;
@@ -15,10 +15,10 @@ public:
         delete next;
     }
     friend class LinkedList;
-private:
 
-    YourClass value;
+private:
     Node* next;
+    int value;
 
 };
 

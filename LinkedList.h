@@ -10,11 +10,10 @@
 using namespace std;
 
 class LinkedList{
-
 public:
     //Constructors
     LinkedList();
-    LinkedList(const LinkedList & list);
+    LinkedList(const LinkedList& list);
 
     //Assignment Operator
     LinkedList &operator=(const LinkedList & rhs);
@@ -23,11 +22,11 @@ public:
     ~LinkedList();
 
     //Functions. You may not need to use them all
-    void append(YourClass obj);
-    bool Delete (YourClass obj);
-    YourClass find (YourClass obj)
-    void printList();
-    void InsertionSort();
+    void append(int obj); //adds object to end of linked list
+    bool Delete (int obj); //deletes object from linked list
+    LinkedList find (int obj); //finds an object in a linked list
+    void printList(); //print the linked list
+    void InsertionSort(); //sorts the linked list
 
 private:
     Node* head;
