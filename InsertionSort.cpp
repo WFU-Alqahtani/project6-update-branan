@@ -40,7 +40,7 @@ int main() {
         double volume = atof(volumeS.c_str());
         StockValue stockDay(date, open, high, low, close, volume);
         v.at(index) = stockDay;
-        index++;
+        L.append(stockDay);
     }}
     inFile.close();
 
@@ -56,10 +56,10 @@ int main() {
 
     // print out sorted list
     for (int i = 0; i < v.size(); i++) {
-        //you should override << to YourClass
         cout << v[i] << endl;
     }
 
+    //linked list insertion sort
     clock_t start_LLInsertionSort = clock();
     L.InsertionSort();
     clock_t end_LLInsertionSort = clock();

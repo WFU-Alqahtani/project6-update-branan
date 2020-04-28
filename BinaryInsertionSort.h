@@ -5,7 +5,7 @@
 #include "StockValue.h"
 using namespace std;
 
-int binarySearch(vector<StockValue> a, int item, int low, int high);
+int binarySearch(vector<StockValue> a, StockValue item, int low, int high);
 void insertionSort(vector<StockValue> &a, int n);
 
 #endif //BINARYINSERTIONSORT_H

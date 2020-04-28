@@ -38,11 +38,13 @@ bool StockValue::operator==(const StockValue &v) {//overloading equal to operato
 
 }
 
-StockValue& StockValue::operator=(const StockValue &copy){
-    this->date = copy.date;
-    this->open = copy.open;
-    this->high = copy.high;
-    this->low = copy.low;
-    this->close = copy.close;
-    this->volume = copy.volume;
+StockValue& StockValue::operator=(const StockValue &copy){//copy assignment operator
+    StockValue stock(copy);
+    swap(stock.date, date);
+    swap(stock.open, open);
+    swap(stock.high, high);
+    swap(stock.low, low);
+    swap(stock.close, close);
+    swap(stock.volume, volume);
+    return *this;
 }

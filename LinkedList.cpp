@@ -29,7 +29,7 @@ LinkedList::LinkedList(const LinkedList  &list){ //copy constructor
 
 LinkedList& LinkedList::operator=(const LinkedList &rhs){ //Copy Assignment Operator
     cout << "Copy assignment operator called." << endl;
-    LinkedList temp;
+    LinkedList temp (rhs);
     swap(temp.head, head);
     return *this;
 }
@@ -47,7 +47,7 @@ LinkedList::~LinkedList(){ //Destructor
 //Functions. You may not need to use them all
 void LinkedList::append(StockValue obj){ //adds element to the end of a list
     Node* tmp = head;
-    while (tmp->next != nullptr){ //finds the end of the list
+    while (tmp != nullptr){ //finds the end of the list
         tmp = tmp->next;}
     tmp->next = new Node(obj); //establishes new Node at the end of the list
 }
@@ -98,7 +98,7 @@ void LinkedList::printList(){//prints the linked list
     }
 }
 
-void LinkedList::InsertionSort() {
+void LinkedList::InsertionSort() {//insertion sort for linked list
     {
         Node *temp;
         Node *previous = head;
@@ -111,11 +111,11 @@ void LinkedList::InsertionSort() {
             return;
         }
         while (current != nullptr) {
-            if (current->value > previous->value) {
+            if (current->value > previous->value) {//overloads comparison operator
                 previous = previous->next;
                 current = current->next;
             } else {
-                if (current->value <= head->value) {
+                if (current->value <= head->value) {//overloads comparison operator
                     previous->next = current->next;
                     current->next = nullptr;
                     current->next = head;
