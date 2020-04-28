@@ -6,7 +6,9 @@
 #define BINARYINSERTIONSORT_LINKEDLIST_H
 
 #include "Node.h"
+#include "StockValue.h"
 #include <iostream>
+#include <vector>
 using namespace std;
 
 class LinkedList{
@@ -22,9 +24,9 @@ public:
     ~LinkedList();
 
     //Functions. You may not need to use them all
-    void append(int obj); //adds object to end of linked list
-    bool Delete (int obj); //deletes object from linked list
-    LinkedList find (int obj); //finds an object in a linked list
+    void append(StockValue obj); //adds object to end of linked list
+    bool Delete (int obj); //deletes object from linked list - not used
+    LinkedList find (int obj); //finds an object in a linked list - not used
     void printList(); //print the linked list
     void InsertionSort(); //sorts the linked list
 

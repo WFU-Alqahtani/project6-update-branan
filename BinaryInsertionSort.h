@@ -2,11 +2,10 @@
 #define BINARYINSERTIONSORT_H
 
 #include <vector>
-#include "LinkedList.h"
-
+#include "StockValue.h"
 using namespace std;
 
-int binarySearch(vector<int> a, int item, int low, int high);
-void insertionSort(vector<int> &a, int n);
+int binarySearch(vector<StockValue> a, int item, int low, int high);
+void insertionSort(vector<StockValue> &a, int n);
 
 #endif //BINARYINSERTIONSORT_H

@@ -3,6 +3,7 @@
 //
 #include "LinkedList.h"
 #include "Node.h"
+#include <vector>
 using namespace std;
 
 LinkedList::LinkedList(){ //constructor
@@ -44,14 +45,15 @@ LinkedList::~LinkedList(){ //Destructor
     }
 }
 //Functions. You may not need to use them all
-void LinkedList::append(int obj){ //adds element to the end of a list
+void LinkedList::append(StockValue obj){ //adds element to the end of a list
     Node* tmp = head;
     while (tmp->next != nullptr){ //finds the end of the list
         tmp = tmp->next;}
     tmp->next = new Node(obj); //establishes new Node at the end of the list
 }
 
-bool LinkedList::Delete(int obj){ //finds and deletes object in a linked list
+/*not used
+ * bool LinkedList::Delete(int obj){ //finds and deletes object in a linked list
     Node* previous = head; //empty header
     Node* current = head->next; //establishes the first valid node
     bool found = false;//obj hasn't been found
@@ -75,6 +77,7 @@ bool LinkedList::Delete(int obj){ //finds and deletes object in a linked list
     return found;
 }
 
+//also not used
 LinkedList LinkedList::find (int obj){//finds an object and its position in the linked list
     Node* current = head;
     int pos = 0;
@@ -84,13 +87,13 @@ LinkedList LinkedList::find (int obj){//finds an object and its position in the 
         pos++;//keeps track of the iterations
     }
     cout << current->value << " has been found at position " << pos << endl;//prints value and position
-}
+}**/
 
 void LinkedList::printList(){//prints the linked list
     Node* current = head;
     while (current != nullptr)//cycles through each element until the end of the list
     {
-        cout << current->value << endl;
+        cout << current-> value << endl;
         current = current->next;
     }
 }
@@ -108,11 +111,11 @@ void LinkedList::InsertionSort() {
             return;
         }
         while (current != nullptr) {
-            if (current->value >= previous->value) {
+            if (current->value > previous->value) {
                 previous = previous->next;
                 current = current->next;
             } else {
-                if (current->value < head->value) {
+                if (current->value <= head->value) {
                     previous->next = current->next;
                     current->next = nullptr;
                     current->next = head;

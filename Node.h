@@ -1,10 +1,12 @@
 #ifndef NODE_H
 #define NODE_H
 
+#include "StockValue.h"
+
 class Node {
 public:
     // Node constructor
-    Node(int v = 0, Node* n = nullptr)
+    Node(StockValue v, Node* n = nullptr)
     {
         value = v;
         next = n;
@@ -18,7 +20,7 @@ public:
 
 private:
     Node* next;
-    int value;
+    StockValue value;
 
 };
 
