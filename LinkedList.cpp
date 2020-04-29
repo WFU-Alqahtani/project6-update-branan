@@ -49,7 +49,7 @@ void LinkedList::append(StockValue obj){ //adds element to the end of a list
     Node* tmp = head;
     while (tmp != nullptr){ //finds the end of the list
         tmp = tmp->next;}
-    tmp->next = new Node(obj); //establishes new Node at the end of the list
+    new Node(obj, tmp); //establishes new Node at the end of the list
 }
 
 /*not used

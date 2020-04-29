@@ -12,7 +12,7 @@ StockValue::StockValue(){//default constructor
     close = -1;
     volume = -1;
 }
-StockValue::StockValue(string d, double o, double h, double l, double c, double v){//alternate constructor
+StockValue::StockValue(string d, double o, double h, double l, double c, int v){//alternate constructor
     date = d;
     open = o;
     high = h;

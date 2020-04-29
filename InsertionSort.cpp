@@ -19,7 +19,7 @@ int main() {
     }
 
     vector<StockValue> v(3202);
-    LinkedList L = LinkedList();
+    auto* L = new LinkedList;
 
     // populate the vector with the data from your data set
     string temp, date, openS, highS, lowS, closeS, volumeS;
@@ -37,10 +37,11 @@ int main() {
         double high = atof(highS.c_str());
         double low = atof(lowS.c_str());
         double close = atof(closeS.c_str());
-        double volume = atof(volumeS.c_str());
+        int volume = stoi(volumeS);
         StockValue stockDay(date, open, high, low, close, volume);
         v.at(index) = stockDay;
-        L.append(stockDay);
+        L->append(stockDay);
+        index++;
     }}
     inFile.close();
 
@@ -61,9 +62,9 @@ int main() {
 
     //linked list insertion sort
     clock_t start_LLInsertionSort = clock();
-    L.InsertionSort();
+    L->InsertionSort();
     clock_t end_LLInsertionSort = clock();
-    L.printList();
+    L->printList();
 
     double elapsed_BinaryInsertionSort = double(end_binaryInsertionSort - start_binaryInsertionSort) / CLOCKS_PER_SEC;
     cout << elapsed_BinaryInsertionSort << endl;
